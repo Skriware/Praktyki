@@ -1,3 +1,5 @@
+//#define DEBUG
+
 #ifndef Fotorezystor
 #define Fotorezystor 
 #include "Arduino.h"
