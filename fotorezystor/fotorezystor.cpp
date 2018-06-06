@@ -16,10 +16,12 @@ void fotorezystor::TestLight(){
         Reads[i] = ReadRaw();
         delay(30);
     }
-    for(int i = 0; i < 100; i++)
-    {
-        Serial.println(Reads[i]);
-    }
+    #ifdef DEBUG
+        for(int i = 0; i < 100; i++)
+        {
+            Serial.println(Reads[i]);
+        } 
+    #endif
     for (int i=0; i < 100; i++){
         if (i==49 && Reads[i-1]>Reads[i]){
             int t= Reads[i];
