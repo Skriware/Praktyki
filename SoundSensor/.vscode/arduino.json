@@ -1,0 +1,6 @@
+{
+    "board": "arduino:avr:mega",
+    "configuration": "cpu=atmega2560",
+    "sketch": "../../../../Desktop/SkriWare/Buzzer/buzzer_test/buzzer_test.ino",
+    "port": "/dev/cu.usbmodem1431"
+}

@@ -55,7 +55,7 @@ void SoundSensor::TestBackground(){
 #endif
     
     Background = Reads_new[39];
-    threshold = Background*0.34;
+    threshold = Background*0.35;
 
 }
 
