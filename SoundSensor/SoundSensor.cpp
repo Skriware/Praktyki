@@ -70,11 +70,19 @@ bool SoundSensor::isLouder(){
 
 int SoundSensor::HowMany(int time){
     int start=millis();
+    bool LastState=0;
     int count=0;
     int TimeOfWhile=millis()-start;
     while (TimeOfWhile!=time){
-        if (isLouder()==true)
+        bool State;
+        if ((Background+threshold) < ReadRaw())
+                State = true;
+        else 
+                State = false;
+        if (LastState == false && State == true){
             count++;
+        }
+        LastState = State; 
         TimeOfWhile=millis()-start;
     }
     return (count);
