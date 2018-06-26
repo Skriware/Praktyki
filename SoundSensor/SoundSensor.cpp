@@ -69,13 +69,13 @@ bool SoundSensor::isLouder(){
 
 
 int SoundSensor::HowMany(int time){
-    int start=millis();
+    long int start=millis();
     bool LastState=0;
     int count=0;
-    int TimeOfWhile=millis()-start;
+    long int TimeOfWhile=millis()-start;
     while (TimeOfWhile!=time){
         bool State;
-        if ((Background+threshold) < ReadRaw())
+        if (isLouder()==true)
                 State = true;
         else 
                 State = false;
