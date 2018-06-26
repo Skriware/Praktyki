@@ -66,6 +66,26 @@ bool LightSensor::isDark(){
 
 }
 
+int LightSensor::HowMany(int time){
+    long int start=millis();
+    bool LastState=0;
+    int count=0;
+    long int TimeOfWhile=millis()-start;
+    while (TimeOfWhile!=time){
+        bool State;
+        if (isBright()==true)
+                State = true;
+        else 
+                State = false;
+        if (LastState == false && State == true){
+            count++;
+        }
+        LastState = State; 
+        TimeOfWhile=millis()-start;
+    }
+    return (count);
+}
+
 bool LightSensor::isBright(){
       if ((avrage-threshold) < ReadRaw())
         return false;

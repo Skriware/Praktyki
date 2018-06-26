@@ -16,7 +16,7 @@ public:
     void TestLight();
     bool isDark();
     bool isBright();
-
+    int HowMany(int time);
 };
 
 #endif
