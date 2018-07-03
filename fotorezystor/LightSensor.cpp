@@ -58,7 +58,7 @@ void LightSensor::TestLight(){
 
 }
 
-bool LightSensor::isDark(){
+bool LightSensor::isBright(){
     if ((avrage+threshold) > ReadRaw())
         return false;
     else
@@ -86,7 +86,7 @@ int LightSensor::HowMany(int time){
     return (count);
 }
 
-bool LightSensor::isBright(){
+bool LightSensor::isDark(){
       if ((avrage-threshold) < ReadRaw())
         return false;
     else
